@@ -1,5 +1,5 @@
-import 'package:kalkulator_bmi/kalkulator_bmi.dart' as kalkulator_bmi;
+import 'package:kalkulator_bmi/kalkulator_bmi.dart' as app;
 
 void main(List<String> arguments) {
-  print('Hello world: ${kalkulator_bmi.calculate()}!');
+  app.main(); // jalankan main dari aplikasi BMI
 }
