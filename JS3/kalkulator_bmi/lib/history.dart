@@ -9,7 +9,7 @@ class History {
     if (_records.isEmpty) {
       print("Belum ada riwayat perhitungan.");
     } else {
-      print("📜 Riwayat perhitungan:");
+      print("Riwayat perhitungan:");
       for (var r in _records) {
         print("- $r");
       }
