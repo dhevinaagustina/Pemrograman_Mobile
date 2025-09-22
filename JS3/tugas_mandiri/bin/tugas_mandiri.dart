@@ -1,5 +1,5 @@
-import 'dart:io';
 import 'dart:math';
+import 'package:tugas_mandiri/input.dart';
 
 void main() {
   final random = Random();
@@ -8,10 +8,9 @@ void main() {
   print("=== Game Tebak Angka ===");
   print("Saya menyimpan angka antara 1-100. Coba tebak!");
 
-  int? tebakan;
+  int tebakan;
   do {
-    stdout.write("Masukkan tebakanmu: ");
-    tebakan = int.parse(stdin.readLineSync()!);
+    tebakan = InputHelper.bacaTebakan();
 
     if (tebakan < target) {
       print("Terlalu kecil!");
