@@ -6,23 +6,26 @@ void main() {
   final random = Random();
   final target = random.nextInt(100) + 1;
   int percobaan = 0;
+  bool selesai = false;
 
   print("=== Game Tebak Angka ===");
   print("Saya menyimpan angka antara 1-100. Coba tebak!");
 
-  int tebakan;
   do {
-    tebakan = InputHelper.bacaTebakan();
+    int tebakan = InputHelper.bacaTebakan();
     percobaan++;
 
-    if (tebakan < target) {
+    if (tebakan == target) {
+      print("Benar! Angkanya $target (percobaan ke-$percobaan)");
+      selesai = true;
+    } else if (tebakan < target) {
       print("Terlalu kecil!");
-    } else if (tebakan > target) {
-      print("Terlalu besar!");
     } else {
-      print("Benar! Angkanya $target");
+      print("Terlalu besar!");
     }
 
-    HintHelper.beriHint(percobaan, target);
-  } while (tebakan != target);
+    if (HintHelper.beriHint(percobaan, target)) {
+      selesai = true;
+    }
+  } while (!selesai);
 }
